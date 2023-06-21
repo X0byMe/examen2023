@@ -469,6 +469,7 @@ header{
     align-items: center;
     z-index: 99;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     background-image: linear-gradient(to bottom, rgba(3, 3, 3, 0.7) 10%, rgba(255, 255, 255, 0.03) 90%);
 
 
