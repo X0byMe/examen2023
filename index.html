@@ -143,10 +143,10 @@
             <div class="container">
                 <div class="entete">
                     <h2 class="main_title light">Line Up.</h2>
-                    <div class="btn bckg-yellow light">
+                    <a href="#fullpass" class="btn bckg-yellow light">
                         <p class="title">Book Full Pass</p>
                         <p class="small_text light">From 149.00€</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="lineup_artists">
                     <div class="artists_by_day">
@@ -806,7 +806,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="box_ticket">
+                    <div class="box_ticket" id="fullpass">
                         <h3 class="sub_title light">Full Day Pass</h3>
                         <div class="pass">
                             <h4 class="text yellow">Full Day Pass - 219,00€</h4>
@@ -1037,6 +1037,26 @@
         </div>
     </div> 
 
+    <div class="footer">
+        <div class="foot container">
+            <div class="logo"></div>
+            <div class="social sub_title">
+                <a href="#"><i class="fa-brands fa-facebook-f" style="color: #000000;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter" style="color: #000000;"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube" style="color: #000000;"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok" style="color: #000000;"></i></a>
+            </div>
+            <div class="text dark">
+                <p>©2023 Slyce Festival</p>
+                <a href="">Website Terms of Use</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Terms & Conditions</a>
+                <a href="">FAQ & Contact</a>
+            </div>
+        </div>
+    </div>
+
     <script>
         const burger = document.querySelector('.menu-burger')
         const navigation = document.querySelector("#navigation")
@@ -1054,6 +1074,7 @@
             navigation.classList.toggle('open-navi')
         })
 
+        //animer le header pour avoir un full screen lors d'un scroll down.
         const header = document.querySelector('header');
         const menuBurger = document.querySelector('.menu-burger');
         let lastScrollPosition = window.pageYOffset;
@@ -1075,7 +1096,7 @@
         });
 
 
-
+        //animer le bouton d'action d'informations
         const btnAction = document.querySelector('.btn_action');
         const infoGenerale = document.querySelector('.info_generale');
         const closeInfo = document.querySelector('.close_info');
@@ -1087,8 +1108,18 @@
 
         closeInfo.addEventListener('click', () => {
         infoGenerale.style.display = 'none';
-        btnAction.style.display = 'flex';
+        if (window.scrollY === 0) {
+            btnAction.style.display = 'flex';
+        }
         });
+
+        // Ajouter un gestionnaire d'événements pour détecter le défilement de la page
+        window.addEventListener('scroll', () => {
+        if (window.scrollY === 0 && infoGenerale.style.display !== 'none') {
+            btnAction.style.display = 'flex';
+        }
+        });
+
 
 
 
