@@ -218,6 +218,16 @@ html{
             text-align: center;
         }
     }
+
+    .foot{
+        .text{
+            flex-direction: column !important;
+
+            a{
+                margin: 2vh auto;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1024px) {
