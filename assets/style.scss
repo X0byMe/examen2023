@@ -223,7 +223,7 @@ html{
         .text{
             flex-direction: column !important;
 
-            a{
+            a, p{
                 margin: 2vh auto;
             }
         }
@@ -1190,6 +1190,10 @@ header{
             justify-content: space-evenly;
             flex-wrap: wrap;
             margin-bottom: 5vh;
+
+            p{
+                text-align: center;
+            }
 
             a{
                 text-decoration: none;
