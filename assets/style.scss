@@ -134,8 +134,7 @@ html{
     .title{
         font-size: 2vh;
         font-family: 'Pd_Medium', sans-serif;
-        margin: 2vh auto;
-        width: 60vw;
+        margin: 2vh 0;
     }
     .text{
         font-size: 2vh;
@@ -273,8 +272,12 @@ html{
         min-width: 80vw;
     }
     
-    .box_artist{
+    .box_artist, .box_ticket{
         min-width: 80vw !important;
+    }
+
+    .btn{
+        width: 100% !important;
     }
     
     .btn_info{
@@ -400,7 +403,6 @@ html{
 }
 
 .btn_info{
-    width: 100%;
     min-height: 70px;
     border-radius: 50px 75px;
     display: flex;
@@ -763,6 +765,7 @@ header{
                 
                 a{
                     text-decoration: none;
+                    margin-left: auto;
                     
                     h2{
                         margin-right: 5vw;
@@ -1099,19 +1102,20 @@ header{
                     flex-direction: row;
 
                     #countryCode{
-                        width: 100px;
+                        width: 70px;
                         border: none;
                         border-bottom: 2px solid #030303;
                         background-color: #f4f4f4;
                         font-family: 'Pd_ExtraLight';
                         font-size: 20px;
                         // margin-right: 2.5vw;
+                        text-align: center;
 
                         
                     }
 
                     input{
-                        min-width: calc(80vw - 100px);
+                        min-width: calc(80vw - 70px);
                     }
                 }
                 

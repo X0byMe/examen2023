@@ -85,7 +85,7 @@
                         <p><i class="fa-solid fa-location-arrow fa-rotate-270" style="color: white;"></i> Informations</p>
                     </div>
                 </div>
-                <div class="info_generale">
+                <div class="info_generale" style="display: none;">
                     <div class="btn_info bckg-dark">
                         <a href="#tickets" class="btn bckg-yellow title light">
                             <p><i class="fa-solid fa-location-arrow fa-rotate-270" style="color: white;"></i> Book tickets now</p>
@@ -1018,8 +1018,8 @@
                 <label for="phone">Numéro de téléphone</label>
                 <div class="phone_input">
                   <select id="countryCode">
-                    <option value="+32">🇧🇪 +32</option>
-                    <option value="+33">🇫🇷 +33</option>
+                    <option value="+32">+32</option>
+                    <option value="+33">+33</option>
                   </select>
                   <input type="text" id="phone" name="phone" placeholder="477876373" required>
                 </div>
@@ -1028,7 +1028,7 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Message"></textarea>
               </div>
-              <button class="btn_info bckg-yellow text light" type="submit" >Envoyer</button>
+              <button class="btn bckg-yellow text light" type="submit" >Envoyer</button>
             </form>
             <div id="successMessage" class="text light" style="display: none;">
                 <i class="fa-solid fa-circle-check" style="color: #E3C008;"></i>
@@ -1095,36 +1095,23 @@
         lastScrollPosition = currentScrollPosition;
         });
 
-
-        //animer le bouton d'action d'informations
+        //animer le bouton d'information
         const btnAction = document.querySelector('.btn_action');
         const infoGenerale = document.querySelector('.info_generale');
         const closeInfo = document.querySelector('.close_info');
 
         btnAction.addEventListener('click', () => {
-        btnAction.style.display = 'none';
-        infoGenerale.style.display = 'flex';
+            btnAction.style.display = 'none';
+            infoGenerale.style.display = 'block';
         });
 
         closeInfo.addEventListener('click', () => {
-        infoGenerale.style.display = 'none';
-        if (window.scrollY === 0) {
-            btnAction.style.display = 'flex';
-        }
-        });
-
-        // Ajouter un gestionnaire d'événements pour détecter le défilement de la page
-        window.addEventListener('scroll', () => {
-        if (window.scrollY === 0 && infoGenerale.style.display !== 'none') {
-            btnAction.style.display = 'flex';
-        }
+            infoGenerale.style.display = 'none';
+            btnAction.style.display = 'block';
         });
 
 
-
-
-
-
+        //Animer la decouverte d'artiste
         const artists = document.querySelectorAll('.artist');
         const boxArtists = document.querySelectorAll('.box_artist');
         let currentAudio = null;
